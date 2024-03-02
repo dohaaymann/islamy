@@ -200,19 +200,20 @@ List d2=[
           length: 6,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: AppBar(automaticallyImplyLeading: false,
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
               // backgroundColor: Colors.amberAccent.shade700,
               backgroundColor: Colors.transparent,toolbarHeight: 40,
              flexibleSpace: Container(
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-    gradient:LinearGradient(begin: Alignment.bottomCenter,end: Alignment.topCenter,
-          colors: [Colors.black,Colors.amberAccent.shade700])
+             decoration: BoxDecoration(
+             gradient:LinearGradient(begin: Alignment.bottomCenter,end: Alignment.topCenter,
+             colors: [Colors.black,Colors.amberAccent.shade700])
     ),
     )
             , title: Container(margin:EdgeInsets.only(left: 0,right:0),alignment: Alignment.centerLeft,
               child: Directionality(textDirection:TextDirection.ltr ,
                 child: IconButton(
-                      onPressed: () {Navigator.of(context).pushNamed("a");},
+                      onPressed: () {Navigator.of(context).pushNamed("interFace");},
                       icon: Icon(
                         Icons.arrow_back,
                         size: 30,
@@ -226,103 +227,97 @@ List d2=[
                   Tab(
                     child:Text("أدعية الانبياء ",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 25,fontFamily: "Amiri"
                         )),
                   ),
                   Tab(
                     child: Text("أدعية قرآنية",style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 25,fontFamily: "Amiri"
                     )),
                   ),Tab(
                     child: Text("أدعية للميت",style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 25,fontFamily: "Amiri"
                     )),
                   ),Tab(
                       child: Text("جوامع الدعاء  ",
                       style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 25,fontFamily: "Amiri"
                       )),),
                   Tab(
                     child: Text("أدعية نبوية",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 25,fontFamily: "Amiri"
                         )),
                      ),
 
                   Tab(
                     child: Text("فضل الدعاء",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 25,fontFamily: "Amiri"
                         )),
                   ),
                          ]   ),
             ),
             body: Directionality(textDirection: TextDirection.rtl,
-              child: TabBarView(children: [Container(
-                  color: Colors.transparent,       //الانبياء
-                  child: ListView.builder(
-                    itemCount: a.length,
-                    itemBuilder: (context, i) {
-                      return
-                        SingleChildScrollView(
-                          child: Card(
-                            color: Colors.transparent,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color:Color(0xFF383124),
-                                borderRadius: BorderRadius.all(Radius.circular(25)),
-                              ),
-                              // height: 250,
-                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                              child:  Column(
-                                  children: [ ListTile(
-                                    title:    Column(
-                                      children: [
-                                        Text("${a[i]}",
-                                            style: TextStyle(
-                                                fontSize:25,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center),Text("${a1[i]}",style: TextStyle(fontSize: 21,color: Colors.grey),)
-                                        ,Text("${a2[i]}",style: TextStyle(fontSize: 26,color: Colors.orange),)
-                                      ],
-                                    )
-                                    ,)]
-                              ),
-                            ),
-                          ),
-                        );
-                    },
-                  )),Container(
+              child: TabBarView(children: [
+                ListView.builder(
+                itemCount: a.length,
+                itemBuilder: (context, i) {
+                  return
+                    SingleChildScrollView(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color:Color(0xFF383124),
+                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                        ),
+                        // height: 250,
+                        alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                        margin: EdgeInsets.only(top: 8, left: 8, right:8),
+                        child:  Column(
+                            children: [ ListTile(
+                              title:    Column(
+                                children: [
+                                  Text("${a[i]}",
+                                      style: TextStyle(
+                                          fontSize:25,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.center),Text("${a1[i]}",style: TextStyle(fontSize: 21,color: Colors.grey),)
+                                  ,Text("${a2[i]}",style: TextStyle(fontSize: 26,color: Colors.orange),)
+                                ],
+                              )
+                              ,)]
+                        ),
+                      ),
+                    );
+                },
+              ),Container(
                   color: Colors.transparent,          //قرأنية
                   child: ListView.builder(
                     itemCount: q.length,
                     itemBuilder: (context, i) {
                       return
                         SingleChildScrollView(
-                          child: Card(
-                            color: Colors.transparent,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color:Color(0xFF383124),
-                                borderRadius: BorderRadius.all(Radius.circular(25)),
-                              ),
-                              // height: 250,
-                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                              child:  Column(
-                                  children: [ ListTile(
-                                    title:    Column(
-                                      children: [
-                                        Text("${q[i]}",
-                                            style: TextStyle(
-                                                fontSize:25,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center),Text("${q1[i]}",style: TextStyle(fontSize: 20,color: Colors.grey),)
-                                      ],
-                                    )
-                                    ,)]
-                              ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:Color(0xFF383124),
+                              borderRadius: BorderRadius.all(Radius.circular(25)),
+                            ),
+                            // height: 250,
+                            alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8, left: 8, right:8),                            child:  Column(
+                                children: [ ListTile(
+                                  title:    Column(
+                                    children: [
+                                      Text("${q[i]}",
+                                          style: TextStyle(
+                                              fontSize:25,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center),Text("${q1[i]}",style: TextStyle(fontSize: 20,color: Colors.grey),)
+                                    ],
+                                  )
+                                  ,)]
                             ),
                           ),
                         );
@@ -335,28 +330,25 @@ List d2=[
                       itemBuilder: (context, i) {
                         return
                           SingleChildScrollView(
-                            child: Card(
-                              color: Colors.transparent,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color:Color(0xFF383124),
-                                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                                ),
-                                // height: 250,
-                                alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                                child:  Column(
-                                    children: [ ListTile(
-                                      title:   Column(
-                                        children: [
-                                          Text("${my1[i]}",
-                                              style: TextStyle(
-                                                  fontSize:25,
-                                                  color: Colors.orange,
-                                                  fontWeight: FontWeight.bold),
-                                              textAlign: TextAlign.center),Text("${my[i]}",style: TextStyle(fontSize: 25,color: Colors.white),textAlign: TextAlign.center,)]
-                                        ,)
-                                      ,)]
-                                ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color:Color(0xFF383124),
+                                borderRadius: BorderRadius.all(Radius.circular(25)),
+                              ),
+                              // height: 250,
+                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                              margin: EdgeInsets.only(top: 8, left: 8, right:8),                              child:  Column(
+                                  children: [ ListTile(
+                                    title:   Column(
+                                      children: [
+                                        Text("${my1[i]}",
+                                            style: TextStyle(
+                                                fontSize:25,
+                                                color: Colors.orange,
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.center),Text("${my[i]}",style: TextStyle(fontSize: 25,color: Colors.white),textAlign: TextAlign.center,)]
+                                      ,)
+                                    ,)]
                               ),
                             ),
                           );
@@ -368,31 +360,28 @@ List d2=[
                     itemBuilder: (context, i) {
                       return
                         SingleChildScrollView(
-                          child: Card(
-                            color: Colors.transparent,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color:Color(0xFF383124),
-                                borderRadius: BorderRadius.all(Radius.circular(25)),
-                              ),
-                              // height: 250,
-                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                              child:  Column(
-                                  children: [ ListTile(
-                                    title:    Column(
-                                      children: [
-                                        Text("${c[i]}",
-                                            style: TextStyle(
-                                                fontSize:25,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center),Row(
-                                          children: [Text("${(i+1)}",style: TextStyle(fontSize: 25,color: Colors.grey),)],
-                                        )
-                                      ],
-                                    )
-                                    ,)]
-                              ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:Color(0xFF383124),
+                              borderRadius: BorderRadius.all(Radius.circular(25)),
+                            ),
+                            // height: 250,
+                            alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8, left: 8, right:8),                            child:  Column(
+                                children: [ ListTile(
+                                  title:    Column(
+                                    children: [
+                                      Text("${c[i]}",
+                                          style: TextStyle(
+                                              fontSize:25,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center),Row(
+                                        children: [Text("${(i+1)}",style: TextStyle(fontSize: 25,color: Colors.grey),)],
+                                      )
+                                    ],
+                                  )
+                                  ,)]
                             ),
                           ),
                         );
@@ -404,29 +393,26 @@ List d2=[
                     itemBuilder: (context, i) {
                       return
                         SingleChildScrollView(
-                          child: Card(
-                            color: Colors.transparent,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color:Color(0xFF383124),
-                                borderRadius: BorderRadius.all(Radius.circular(25)),
-                              ),
-                              // height: 250,
-                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                              child:  Column(
-                                  children: [ ListTile(
-                                    title:    Column(
-                                      children: [
-                                        Text("${nb[i]}",
-                                            style: TextStyle(
-                                                fontSize:25,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center),
-                                      ],
-                                    )
-                                    ,)]
-                              ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:Color(0xFF383124),
+                              borderRadius: BorderRadius.all(Radius.circular(25)),
+                            ),
+                            // height: 250,
+                            alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8, left: 8, right:8),                            child:  Column(
+                                children: [ ListTile(
+                                  title:    Column(
+                                    children: [
+                                      Text("${nb[i]}",
+                                          style: TextStyle(
+                                              fontSize:25,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center),
+                                    ],
+                                  )
+                                  ,)]
                             ),
                           ),
                         );
@@ -438,28 +424,24 @@ List d2=[
                   child: ListView.builder(
                     itemCount: d.length,             //فضل الدعاء
                     itemBuilder: (context, i) {
-                      return
-                        SingleChildScrollView(
-                          child: Card(
-                            color: Colors.transparent,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color:Color(0xFF383124),
-                                borderRadius: BorderRadius.all(Radius.circular(25)),
-                              ),
-                              // height: 250,
-                              alignment: Alignment.center,padding: EdgeInsets.only(top: 10),    margin: EdgeInsets.only(top: 6, left: 8, right: 8),
-                              child:  Column(
-                                  children: [ ListTile(
-                                    title:    Column(
-                                      children: [
-                                        Text("${d[i]}",style: TextStyle(
-                                        fontSize:25,
-                                        color: Colors.orange,
-                                        fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.center),Text("${d1[i]}",style: TextStyle(fontSize: 25,color: Colors.white),textAlign: TextAlign.center,)]
-                                    ),subtitle: Text("${d2[i]}",style: TextStyle(fontSize: 20,color: Colors.grey),textAlign: TextAlign.center,))]
-                              ),
+                      return SingleChildScrollView(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:Color(0xFF383124),
+                              borderRadius: BorderRadius.all(Radius.circular(25)),
+                            ),
+                            // height: 250,
+                            alignment: Alignment.center,padding: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8, left: 8, right:8),                              child:  Column(
+                                children: [ ListTile(
+                                  title:    Column(
+                                    children: [
+                                      Text("${d[i]}",style: TextStyle(
+                                      fontSize:25,
+                                      color: Colors.orange,
+                                      fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center),Text("${d1[i]}",style: TextStyle(fontSize: 25,color: Colors.white),textAlign: TextAlign.center,)]
+                                  ),subtitle: Text("${d2[i]}",style: TextStyle(fontSize: 20,color: Colors.grey),textAlign: TextAlign.center,))]
                             ),
                           ),
                         );

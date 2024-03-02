@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:scroll_page_view/scroll_page.dart';
 import 'package:stacked_listview/stacked_listview.dart';
-import 'package:xxxxxxxxxxxx/a.dart';
+import 'package:xxxxxxxxxxxx/interface.dart';
 import 'package:xxxxxxxxxxxx/main.dart';
 
 class mnzl extends StatefulWidget {

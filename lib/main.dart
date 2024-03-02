@@ -1,39 +1,79 @@
+import 'dart:math';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:xxxxxxxxxxxx/a.dart';
-import 'package:xxxxxxxxxxxx/allah.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:workmanager/workmanager.dart';
+import 'package:xxxxxxxxxxxx/interface.dart';
+import 'package:xxxxxxxxxxxx/azkarlist.dart';
 import 'package:xxxxxxxxxxxx/quran.dart';
 import 'package:xxxxxxxxxxxx/slah.dart';
 import 'package:xxxxxxxxxxxx/t3am.dart';
-import 'package:xxxxxxxxxxxx/test.dart';
-import 'package:xxxxxxxxxxxx/allah2.dart';
+import 'package:xxxxxxxxxxxx/sebha.dart';
+import 'package:xxxxxxxxxxxx/doaa.dart';
 import 'package:xxxxxxxxxxxx/wdo2.dart';
 import 'package:xxxxxxxxxxxx/zkr.dart';
+import 'StaticVars.dart';
 import 'as7a.dart';
 import 'azan.dart';
-import 'azkar1.dart';
-import 'azkar.dart';
-// @dart=2.9
-import 'package:widget_circular_animator/widget_circular_animator.dart';
-// import 'package:scroll_snap_list/scroll_snap_list.dart';
-import 'package:hawk_fab_menu/hawk_fab_menu.dart';
-import 'package:animated_explode_button/animated_explode_button.dart';
+import 'firebase_options.dart';
+import 'note.dart';
+import 'sabah.dart';
 import 'bslah.dart';
 import 'hyg.dart';
 import 'mnzl.dart';
 import 'msaa.dart';
 import 'mskd.dart';
 import 'noom.dart';
-import 'src/my_app.dart';
-import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
-import 'package:stacked_listview/stacked_listview.dart';
-import 'package:scroll_page_view/pager/page_controller.dart';
-import 'package:scroll_page_view/pager/scroll_page_view.dart';
-import 'package:scroll_page_view/scroll_page.dart';
 
 
 
 Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MYapp());
+}
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+Future<void> showNotification() async {
+  final int rndmIndex = Random().nextInt(StaticVars().smallDo3a2.length - 1);
+  final AndroidNotificationDetails androidPlatformChannelSpecifics =
+  AndroidNotificationDetails(
+    'channel_id',
+    'إسلامي',
+    importance: Importance.max,
+    priority: Priority.high,
+    playSound: true,
+    enableVibration: true,
+  );
+  final NotificationDetails platformChannelSpecifics =NotificationDetails(android: androidPlatformChannelSpecifics);
+
+  await flutterLocalNotificationsPlugin.show(
+    rndmIndex,'دعاء اليوم',
+    StaticVars().smallDo3a2[rndmIndex],
+    platformChannelSpecifics,
+  );
+}
+
+void callbackDispatcher() {
+  WidgetsFlutterBinding.ensureInitialized();
+  flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+  const AndroidInitializationSettings initializationSettingsAndroid =
+  AndroidInitializationSettings('@mipmap/ic_launcher');
+  final InitializationSettings initializationSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+  );
+
+  flutterLocalNotificationsPlugin.initialize(
+    initializationSettings,
+  );
+
+  Workmanager().executeTask((task, inputData) async {
+    await showNotification();
+    return true;
+  });
 }
 
 class MYapp extends StatelessWidget {
@@ -42,12 +82,18 @@ class MYapp extends StatelessWidget {
     return
       MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: "Amiri",textTheme:Typography.whiteMountainView,brightness: Brightness.dark)  ,
-      home:a(),
+      theme: ThemeData(
+        textTheme: TextTheme(
+        displayLarge: const TextStyle(
+            // fontFamily: "Amiri"
+         ),),
+          // fontFamily: "Amiri",
+          brightness: Brightness.dark)  ,
+      home:interFace(),
       routes:{
-        "test":(context) =>test(),
-        "a":(context) => a(),
-        "azkar":(context) =>azkar(),
+        "note":(context) =>note(sum:0),
+        "sebha":(context) =>sebha(title: "سبحان الله"),
+        "interFace":(context) => interFace(),
         "allah":(context) => allah(),
         "allah2":(context) => allah2(),
         "azkar1":(context) =>azkar1(),

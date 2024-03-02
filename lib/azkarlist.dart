@@ -2,7 +2,7 @@ import 'package:animation_list/animation_list.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_page_view/scroll_page.dart';
-import 'package:xxxxxxxxxxxx/a.dart';
+import 'package:xxxxxxxxxxxx/interface.dart';
 import 'package:xxxxxxxxxxxx/main.dart';
 
 class allah extends StatefulWidget {
@@ -92,17 +92,15 @@ class allahState extends State<allah> {
         ),
       )),
       Scaffold(
-          appBar: AppBar(bottomOpacity: 5,elevation: 5,
+          appBar: AppBar(
             backgroundColor: Colors.transparent, toolbarHeight:70,flexibleSpace: Container(
-    decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
+    decoration: BoxDecoration(
     gradient:LinearGradient(begin: Alignment.bottomCenter,end: Alignment.topCenter,
-    colors: [Colors.black,Colors.amberAccent.shade700]),
-    ),
-    ),
+    colors: [Colors.black,Colors.amberAccent.shade700]),),),
             title:
             Container(alignment: Alignment.topRight,
               child: Text("أذكار المسلم",
-                  style: TextStyle(fontSize: 30,fontFamily: "Amiri"), ),
+                  style: TextStyle(fontSize: 30,fontFamily: "Amiri"),),
             ),
           ),
           backgroundColor: Colors.transparent,
@@ -121,7 +119,7 @@ class allahState extends State<allah> {
                     height: 80,alignment: Alignment.center,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 16, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.teal)),
@@ -133,7 +131,7 @@ class allahState extends State<allah> {
                                 TextStyle(color: Colors.white, fontSize: 40,fontFamily: "Amiri"))),
                     height: 80,
                     width: 700,
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical:5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.red)),
@@ -146,7 +144,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.pink)),
@@ -159,7 +157,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.deepPurple)),
@@ -172,7 +170,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.green)),
@@ -185,7 +183,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.greenAccent)),
@@ -198,7 +196,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.brown)),
@@ -211,7 +209,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.purple)),
@@ -224,7 +222,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.lightGreen)),
@@ -237,7 +235,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.pink)),
@@ -250,7 +248,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.deepOrange)),
@@ -263,7 +261,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.greenAccent)),
@@ -277,7 +275,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.brown)),
@@ -290,7 +288,7 @@ class allahState extends State<allah> {
                     height: 80,
                     width: 700,
                     margin: EdgeInsets.only(
-                        top: 10, left: 10, right: 10, bottom: 10),
+                        top: 5, left: 10, right: 10, bottom: 5),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                         color: Colors.blue)),
